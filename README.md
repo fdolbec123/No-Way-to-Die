@@ -38,8 +38,10 @@ command to run if program contains helper info
 ## Authors
 
 Francis D.
-[@fdolbec123](https://github.com/fdolbec123)
-[email](mailto:infos.fpmedia@gmail.com)
+
+[@fdolbec123 on Github](https://github.com/fdolbec123)
+
+[Email](mailto:infos.fpmedia@gmail.com)
 
 ## Version History
 
