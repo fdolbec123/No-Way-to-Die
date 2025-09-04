@@ -26,6 +26,26 @@ MonoBehaviour:
     m_Localized: Quit
     m_Metadata:
       m_Items: []
+  - m_Id: 15971224903680
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21071834112000
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33405013057536
+    m_Localized: Subtitles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37817009823744
+    m_Localized: Coarse language?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38175522152448
+    m_Localized: Save
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

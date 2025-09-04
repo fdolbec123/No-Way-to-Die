@@ -26,6 +26,26 @@ MonoBehaviour:
     m_Localized: Quitter
     m_Metadata:
       m_Items: []
+  - m_Id: 15971224903680
+    m_Localized: Retour
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21071834112000
+    m_Localized: Langue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33405013057536
+    m_Localized: Sous-titres
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37817009823744
+    m_Localized: Language grossier?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38175522152448
+    m_Localized: Sauvegarder
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

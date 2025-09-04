@@ -23,6 +23,26 @@ MonoBehaviour:
     m_Key: QuitBtnLabel
     m_Metadata:
       m_Items: []
+  - m_Id: 15971224903680
+    m_Key: BackBtnLabel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21071834112000
+    m_Key: LanguageLabel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33405013057536
+    m_Key: SubtitlesLabel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37817009823744
+    m_Key: AudioLabel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38175522152448
+    m_Key: SaveBtnLabel
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
