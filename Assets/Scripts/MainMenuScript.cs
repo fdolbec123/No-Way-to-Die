@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Localization.Settings;
-using UnityEditor.Localization.Editor;
+//using UnityEditor.Localization.Editor;
 
 public class MainMenuScript : MonoBehaviour
 {
@@ -20,6 +20,7 @@ public class MainMenuScript : MonoBehaviour
     {
         Debug.Log("Button pressed!");
         // Showing this only for Debuging purposes.
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     //Script when starting the game
