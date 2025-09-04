@@ -2264,6 +2264,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuScript
   languageMenu: {fileID: 751196105}
+  subtitlesChoice: {fileID: 1356308796}
+  vocabularyChoice: {fileID: 1400698845}
+  volumeSlider: {fileID: 401438838}
 --- !u!1 &908176408
 GameObject:
   m_ObjectHideFlags: 0
@@ -3772,7 +3775,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &1388767708
 GameObject:
   m_ObjectHideFlags: 0
@@ -3965,7 +3968,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &1404704543
 GameObject:
   m_ObjectHideFlags: 0
