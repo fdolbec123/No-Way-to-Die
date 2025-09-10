@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1797248562479773878, guid: 187f3ff6e44a44d2899851706e18f576, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3969241376240288740, guid: 187f3ff6e44a44d2899851706e18f576, type: 3}
       propertyPath: m_Name
       value: PhoneGameObject
@@ -181,7 +185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6528563291610129219, guid: 187f3ff6e44a44d2899851706e18f576, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
