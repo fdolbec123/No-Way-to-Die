@@ -15,12 +15,27 @@ public class MainMenuScript : MonoBehaviour
     public Slider volumeSlider;
     private int useSubs;
     private int matureVocabulary;
+    public DataToSave DataToSaveObject = new DataToSave();
     //Script for play button:
     public void PlayGame()
     {
         Debug.Log("Button pressed!");
+        DataToSaveObject = SaveSystemScript.Load();
+        if (DataToSaveObject != null)
+        {
+            Debug.Log("Here is the value: " + DataToSaveObject.reachEndOfIntro);
+            if (DataToSaveObject.reachEndOfIntro == false) {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+        }
+        else
+        {
+            Debug.Log("No save file!!!");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
         // Showing this only for Debuging purposes.
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //DataToSaveObject = SaveSystemScript.Load();
+
     }
 
     //Script when starting the game

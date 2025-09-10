@@ -3,7 +3,9 @@ using System.IO;
 
 public class SaveSystemScript
 {
+    //public DataToSave DataToSaveObject = new DataToSave();
     public static string FileName()
+
     {
         string saveFile = Application.persistentDataPath + "/progress" + ".nwtd";
         return saveFile;
@@ -12,11 +14,23 @@ public class SaveSystemScript
     { 
         File.WriteAllText(FileName(), JsonUtility.ToJson(data));
     }
-    public static void Load()
+    public static DataToSave Load()
     {
-        string saveContent = File.ReadAllText(FileName());
-        //_SaveData = JsonUtility.FromJson<SaveData>(saveContent);
+
+        if (File.Exists(FileName()))
+        {
+            string savedContent = File.ReadAllText(FileName());
+
+            DataToSave response = JsonUtility.FromJson<DataToSave>(savedContent);
+            Debug.Log(response.reachEndOfIntro);
+            return response;
+        }
+        else
+        {
+            return null;
+        }
     }
+        
 }
 [System.Serializable]
 public class DataToSave
