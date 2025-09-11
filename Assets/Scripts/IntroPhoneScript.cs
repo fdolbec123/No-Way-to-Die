@@ -1,18 +1,28 @@
-using JetBrains.Annotations;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class IntroPhoneScript : MonoBehaviour
 {
-    public bool status;
+    public GameObject phoneBtn;
     public DataToSave DataToSaveObject = new DataToSave();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    IEnumerator DoSomething(float duration)
+    {
+        // do something before
+        Debug.Log("Before");
+
+        // waits here
+        yield return new WaitForSeconds(duration);
+        phoneBtn.SetActive(true);
+    }
     void Start()
     {
-        status = false;
-        //DataToSaveObject.reachEndOfIntro = false;
         DataToSaveObject.levelToGo = 0;
         SaveSystemScript.Save(DataToSaveObject);
+        Debug.Log("Here");
+        StartCoroutine(DoSomething(3));
     }
 
     // Update is called once per frame
@@ -21,18 +31,15 @@ public class IntroPhoneScript : MonoBehaviour
 
     }
     
-    private void Answer()
+    public void Answer()
     {
-        status = true;
-        Debug.Log(status);
-        //DataToSaveObject.reachEndOfIntro = true;
         DataToSaveObject.levelToGo = 1;
         SaveSystemScript.Save(DataToSaveObject);
     }
-    void OnMouseDown()
+    /* void OnMouseDown()
     {
         Debug.Log("Here");
         Answer();
-    }
+    } */
 
 }

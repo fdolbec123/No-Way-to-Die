@@ -128,13 +128,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 539049005}
+  - component: {fileID: 539049006}
+  - component: {fileID: 539049007}
   m_Layer: 0
   m_Name: Phone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &539049005
 Transform:
   m_ObjectHideFlags: 0
@@ -152,6 +154,43 @@ Transform:
   - {fileID: 2146848661}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &539049006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539049004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4b2c0379cbc4b6582ee82745d9a91b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IntroPhoneScript
+  phoneBtn: {fileID: 2146848657}
+  DataToSaveObject:
+    levelToGo: 0
+--- !u!95 &539049007
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539049004}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0d247fe39dcda467db34b8d471e0a37e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &598508115
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,29 +519,14 @@ GameObject:
   - component: {fileID: 2146848661}
   - component: {fileID: 2146848660}
   - component: {fileID: 2146848659}
-  - component: {fileID: 2146848658}
+  - component: {fileID: 2146848662}
   m_Layer: 0
   m_Name: PhoneIconSprite_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2146848658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2146848657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e4b2c0379cbc4b6582ee82745d9a91b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::IntroPhoneScript
-  status: 0
-  DataToSaveObject:
-    reachEndOfIntro: 0
+  m_IsActive: 0
 --- !u!58 &2146848659
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -612,6 +636,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 539049005}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2146848662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146848657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7862c7f81569c45b6b52b376f7eef625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::phoneBtnScript
+  intro: {fileID: 539049006}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
