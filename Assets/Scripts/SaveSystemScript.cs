@@ -22,12 +22,16 @@ public class SaveSystemScript
             string savedContent = File.ReadAllText(FileName());
 
             DataToSave response = JsonUtility.FromJson<DataToSave>(savedContent);
-            Debug.Log(response.reachEndOfIntro);
             return response;
         }
         else
         {
-            return null;
+            Debug.Log("There is no save file... Let's create one!");
+            DataToSave DataToSaveObject = new DataToSave();
+
+            DataToSaveObject.levelToGo = 0;
+            Save(DataToSaveObject);
+            return DataToSaveObject;
         }
     }
         
@@ -35,5 +39,5 @@ public class SaveSystemScript
 [System.Serializable]
 public class DataToSave
 {
-    public bool reachEndOfIntro;
+    public int levelToGo;
 }

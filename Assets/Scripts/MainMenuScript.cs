@@ -19,19 +19,19 @@ public class MainMenuScript : MonoBehaviour
     //Script for play button:
     public void PlayGame()
     {
-        Debug.Log("Button pressed!");
+        //Debug.Log("Button pressed!");
         DataToSaveObject = SaveSystemScript.Load();
-        if (DataToSaveObject != null)
+        if (JsonUtility.ToJson(DataToSaveObject) != "")
         {
-            Debug.Log("Here is the value: " + DataToSaveObject.reachEndOfIntro);
-            if (DataToSaveObject.reachEndOfIntro == false) {
+            Debug.Log("Here is the value: " + DataToSaveObject.levelToGo);
+            if (DataToSaveObject.levelToGo == 0)
+            {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
-        }
-        else
-        {
-            Debug.Log("No save file!!!");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            if (DataToSaveObject.levelToGo == 1)
+            {
+                Debug.Log("Intro ended!");
+            }
         }
         // Showing this only for Debuging purposes.
         //DataToSaveObject = SaveSystemScript.Load();

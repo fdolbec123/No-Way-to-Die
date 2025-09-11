@@ -10,7 +10,8 @@ public class IntroPhoneScript : MonoBehaviour
     void Start()
     {
         status = false;
-        DataToSaveObject.reachEndOfIntro = false;
+        //DataToSaveObject.reachEndOfIntro = false;
+        DataToSaveObject.levelToGo = 0;
         SaveSystemScript.Save(DataToSaveObject);
     }
 
@@ -24,7 +25,8 @@ public class IntroPhoneScript : MonoBehaviour
     {
         status = true;
         Debug.Log(status);
-        DataToSaveObject.reachEndOfIntro = true;
+        //DataToSaveObject.reachEndOfIntro = true;
+        DataToSaveObject.levelToGo = 1;
         SaveSystemScript.Save(DataToSaveObject);
     }
     void OnMouseDown()
