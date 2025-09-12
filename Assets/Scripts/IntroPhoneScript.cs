@@ -16,6 +16,7 @@ public class IntroPhoneScript : MonoBehaviour
         // waits here
         yield return new WaitForSeconds(duration);
         phoneBtn.SetActive(true);
+        gameObject.GetComponent<Animator>().enabled = true;
     }
     void Start()
     {
@@ -33,13 +34,10 @@ public class IntroPhoneScript : MonoBehaviour
     
     public void Answer()
     {
+        gameObject.GetComponent<Animator>().enabled = false;
+        gameObject.transform.Rotate(new Vector3(0, 0, 0));
+        phoneBtn.SetActive(false);
         DataToSaveObject.levelToGo = 1;
         SaveSystemScript.Save(DataToSaveObject);
     }
-    /* void OnMouseDown()
-    {
-        Debug.Log("Here");
-        Answer();
-    } */
-
 }

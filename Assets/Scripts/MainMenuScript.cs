@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Localization.Settings;
+using UnityEngine.Audio;
 //using UnityEditor.Localization.Editor;
 
 public class MainMenuScript : MonoBehaviour
@@ -13,8 +14,10 @@ public class MainMenuScript : MonoBehaviour
     public Toggle subtitlesChoice;
     public Toggle vocabularyChoice;
     public Slider volumeSlider;
+    public AudioMixer mixer;
     private int useSubs;
     private int matureVocabulary;
+    private float masterVolumeValue;
     public DataToSave DataToSaveObject = new DataToSave();
     //Script for play button:
     public void PlayGame()
@@ -55,11 +58,31 @@ public class MainMenuScript : MonoBehaviour
         {
             vocabularyChoice.isOn = true;
         }
-          if (matureVocabulary == 0)
+        if (matureVocabulary == 0)
         {
             vocabularyChoice.isOn = false;
         }
-        
+        masterVolumeValue = PlayerPrefs.GetFloat("MasterVolumeValue");
+        if (masterVolumeValue == 0)
+        {
+            volumeSlider.SetValueWithoutNotify(1f);
+            mixer.SetFloat("MasterParameter", Mathf.Log10(volumeSlider.value) * 80);
+
+        }
+        if (masterVolumeValue != 0)
+        {
+            volumeSlider.SetValueWithoutNotify(masterVolumeValue);
+            mixer.SetFloat("MasterParameter", Mathf.Log10(volumeSlider.value) * 80);
+        }
+        var selectedLocale = LocalizationSettings.SelectedLocale;
+        var availableLocales = LocalizationSettings.AvailableLocales.Locales;
+        int index = availableLocales.IndexOf(selectedLocale);
+        languageMenu.SetValueWithoutNotify(index);
+        volumeSlider.onValueChanged.AddListener(SetMasterVolume);
+    }
+    void SetMasterVolume(float audioValue)
+    {
+        mixer.SetFloat("MasterParameter", Mathf.Log10(audioValue)*80);
     }
 
     //Script for the options panel:
@@ -67,6 +90,8 @@ public class MainMenuScript : MonoBehaviour
     {
         //volume slider code
         Debug.Log(volumeSlider.value);
+        masterVolumeValue = volumeSlider.value;
+        PlayerPrefs.SetFloat("MasterVolumeValue", masterVolumeValue);
 
         //Language selction code
         Debug.Log(languageMenu.value);
